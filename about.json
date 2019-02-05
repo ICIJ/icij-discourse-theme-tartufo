@@ -1,6 +1,6 @@
 {
   "name": "ICIJ Theme",
-  "about_url": "",
+  "about_url": "https://github.com/ICIJ/icij-discourse-colors/blob/master/README.md",
   "license_url": "https://github.com/ICIJ/icij-discourse-colors/blob/master/LICENSE.txt",
   "color_schemes": {
     "ICIJ": {
