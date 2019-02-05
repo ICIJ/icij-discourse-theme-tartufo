@@ -46,7 +46,7 @@ body textarea {
   height: auto;
 }
 
-.menu-panel, .admin-content, .bootbox.modal, .modal-inner-container, .admin-detail,
+.menu-panel, .bootbox.modal, .modal-inner-container,
 .d-header-icons .icon:hover, .d-header-icons .icon:focus,
 .drop-down-mode .d-header-icons .active .icon {
   background: #ffffff;
@@ -56,6 +56,11 @@ body textarea {
   background: #ffffff !important;
 }
 
-.admin-content {
+.user-main, .admin-content {
   padding: 1em;
+  background: #ffffff;
+}
+
+.user-main .about.no-background .details {
+  background: transparent;
 }
