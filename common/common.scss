@@ -1,6 +1,6 @@
 //use Roboto font
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
   font-weight: 400;
 }
 
@@ -8,7 +8,7 @@ body input,
 body button,
 body select,
 body textarea {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 }
 
 @mixin boxShadow {
@@ -44,4 +44,8 @@ body textarea {
 .cooked img:not(.thumbnail):not(.emoji) {
   max-width: 100% !important;
   height: auto;
+}
+
+.menu-panel, .admin-content {
+  background: #fff;
 }
