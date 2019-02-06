@@ -61,6 +61,8 @@ body textarea {
   background: #ffffff;
 }
 
-.user-main .about.no-background .details {
+.user-main .about.no-background .details,
+.user-menu .notifications li.read,
+.user-stream .item {
   background: transparent;
 }
