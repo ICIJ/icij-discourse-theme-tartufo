@@ -44,7 +44,9 @@ body textarea {
   font-weight: bolder;
 }
 
-.combo-box.group-category-dropdown, .combo-box.category-drop {
+.combo-box.group-category-dropdown,
+.combo-box.group-dropdown,
+.combo-box.category-drop {
 
   .combo-box-header {
     font-weight: bolder;
