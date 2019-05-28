@@ -1,7 +1,23 @@
+@function text-contrast($n) {
+  $color_brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light_color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+  @if abs($color_brightness) < ($light_color/2){
+    @return white;
+  }
+  @else {
+    @return black;
+  }
+}
+
+$panel_color: $primary;
+$panel_background: text-contrast($panel_color);
+
 //use Roboto font
 html {
   font-family: "Lato", sans-serif;
   font-weight: 400;
+  background: $secondary;
 }
 
 body input,
@@ -76,22 +92,26 @@ body textarea {
   height: auto;
 }
 #reply-control {
-  background: #ffffff;
+  background: $panel_background;
+  color: $panel_color;
 }
 
 .menu-panel, .bootbox.modal, .modal-inner-container, .admin-detail,
 .d-header-icons .icon:hover, .d-header-icons .icon:focus,
 .drop-down-mode .d-header-icons .active .icon {
-  background: #ffffff;
+  background: $panel_background;
+  color: $panel_color;
 }
 
 .boxed.white {
-  background: #ffffff !important;
+  background: $panel_background !important;
+  color: $panel_color;
 }
 
 .user-main, .admin-content {
   padding: 1em;
-  background: #ffffff;
+  background: $panel_background;
+  color: $panel_color;
 }
 
 .user-main .about.no-background .details,
