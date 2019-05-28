@@ -17,9 +17,18 @@
 //add shadow behind topics in Latest view
 .category-list,
 .topic-list,
-.latest-topic-list {
+.latest-topic-list,
+.group-members {
   @include boxShadow;
   background-color: lighten($secondary, 10%);
+}
+
+table.group-members {
+  margin-top: 1rem;
+
+  th, tr td {
+    padding: 12px 5px;
+  }
 }
 
 //underline navigation links
