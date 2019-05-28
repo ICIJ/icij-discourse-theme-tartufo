@@ -25,6 +25,34 @@ body textarea {
   @include boxShadow;
 }
 
+.list-controls .select-kit {
+  & .select-kit-header {
+    text-transform: lowercase;
+  }
+
+  & .select-kit-header.is-focused, & .select-kit-collection {
+    background: white;
+    font-size: 1rem;
+  }
+
+  & .select-kit-filter {
+    font-size: 1rem;
+  }
+}
+
+#create-topic.btn {
+  font-weight: bolder;
+}
+
+.combo-box.group-category-dropdown, .combo-box.category-drop {
+
+  .combo-box-header {
+    font-weight: bolder;
+    background: $tertiary;
+    border-color: $tertiary;
+  }
+}
+
 //remove shadow from a few buttons
 .d-editor-button-bar .btn,
 .bulk-select-all,
@@ -44,6 +72,9 @@ body textarea {
 .cooked img:not(.thumbnail):not(.emoji) {
   max-width: 100% !important;
   height: auto;
+}
+#reply-control {
+  background: #ffffff;
 }
 
 .menu-panel, .bootbox.modal, .modal-inner-container, .admin-detail,
@@ -65,4 +96,15 @@ body textarea {
 .user-menu .notifications li.read,
 .user-stream .item {
   background: transparent;
+}
+
+#main-outlet > br {
+  display: none;
+}
+
+div[itemprop=mainContentOfPage] {
+  background: #ffff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  @include boxShadow;
 }
