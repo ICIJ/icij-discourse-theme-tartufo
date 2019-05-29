@@ -114,8 +114,9 @@ body textarea {
   color: $panel_color;
 }
 
-.no-topics {
+.latest-topic-list .no-topics {
   text-align: center;
+  margin-top: 0;
   padding: 1em;
 }
 
