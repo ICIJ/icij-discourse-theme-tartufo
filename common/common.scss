@@ -114,6 +114,11 @@ body textarea {
   color: $panel_color;
 }
 
+.no-topics {
+  text-align: center;
+  padding: 1em;
+}
+
 .user-main .about.no-background .details,
 .user-menu .notifications li.read,
 .user-stream .item {
