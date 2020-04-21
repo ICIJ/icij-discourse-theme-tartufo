@@ -12,6 +12,11 @@
     background-color 2s, transform 0.5s;
 }
 
+.category .category-title-link .category-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
 //add shadow behind the list of topics on right in Category and Latest View
 //add shadow behind list of categories on left in Category and Latest View
 //add shadow behind topics in Latest view
