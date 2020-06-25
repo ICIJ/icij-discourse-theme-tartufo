@@ -1,4 +1,3 @@
-## Material Design Stock Theme
+## Discourse ICIJ theme: Mascarpone
 
-More info at: https://meta.discourse.org/t/material-design-stock-theme/47142?u=falco
-
+Base ond: https://meta.discourse.org/t/material-design-stock-theme/47142?u=falco
