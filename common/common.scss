@@ -15,7 +15,7 @@ $panel_background: text-contrast($panel_color);
 
 //use Roboto font
 html {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: 400;
   background: $secondary;
 }
@@ -28,16 +28,116 @@ body textarea {
 }
 
 @mixin boxShadow {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 0 0 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px #e3e3e3;
 }
 
 @mixin buttonShadow {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 0 1px #e3e3e3;
+}
+
+a, a:visited {
+  color: #000;
+
+  .topic-body .contents &  {
+    border-bottom: $tertiary 1px solid;
+  }
+}
+
+.categories-list .category .category-description {
+  color: #848484;
+}
+
+.topic-body .contents, .categories-list .category .category-description {
+  font-size: 16px;
+  font-family: "Merriweather", Georgia, "Times New Roman", Times,serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+  }
+}
+
+.list-controls .combo-box .combo-box-header {
+  color: #fff;
+  line-height: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+
+  .d-icon, .category-name {
+    color: #fff;
+  }
+}
+
+table {
+
+  tr {
+    border-bottom: solid 1px #e3e3e3;
+  }
+
+  tbody {
+    border-top: solid 2px #e3e3e3;
+  }
+}
+
+.user-table .wrapper {
+  display: flex;
+  position: relative;
+
+  .user-secondary-navigation {
+    border-right: solid 1px #e3e3e3;
+  }
+
+  .user-additional-controls {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.static-login {
+  background: $tertiary;
+
+  .body-page {
+    max-width: 660px;
+    margin: 5vh auto 2vh;
+    text-align: center;
+    border: 1px solid #e3e3e3;
+    border-radius: .25rem;
+    padding-bottom: 1rem;
+    background: #f0f0f0;
+
+    .login-required {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e3e3e3;
+      background: white;
+
+      h2 {
+        font-weight: 300;
+        font-size: 35px;
+
+        &:before {
+          content: "";
+          background: url('https://unpkg.com/@icij/murmur@1.18.0/lib/assets/images/icij-black.svg') no-repeat center center;
+          background-size: contain;
+          height: 48px;
+          width: 48px;
+          border: 1px solid black;
+          display: block;
+          margin: auto;
+        }
+      }
+
+      & ~ .btn {
+        padding: .5rem 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
 }
 
 //raise and round buttons
 .btn {
-  border-radius: 2px;
   @include boxShadow;
 }
 
@@ -94,6 +194,11 @@ body textarea {
 #reply-control {
   background: $panel_background;
   color: $panel_color;
+}
+
+.d-header {
+  border-bottom:#e3e3e3 solid 1px;
+  box-shadow: none;
 }
 
 .menu-panel, .bootbox.modal, .modal-inner-container, .admin-detail,
@@ -216,7 +321,7 @@ body textarea {
         top:50%;
         height: 1.1rem;
         width: 1.1rem;
-        border: 3px solid $secondary;
+        border: 1px solid $secondary;
         background: $secondary;
         transform: rotate(45deg);
         transform-origin: top right;
