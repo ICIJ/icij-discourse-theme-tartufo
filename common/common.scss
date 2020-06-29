@@ -103,6 +103,61 @@ a, a:visited {
   }
 }
 
+.group-details-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 35px * 2;
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    background: repeating-linear-gradient(-55deg, #eef7f9, #eef7f9 2px, #fff 2px, #fff 4px);
+    text-align: center;
+    z-index: -1;
+    position: absolute;
+    bottom:-35px;
+    left: 50%;
+    width: 100vw;
+    height: 50vh;
+    transform: translateX(-50%);
+  }
+
+  .group-info, .group-info ~ hr {
+    display: none;
+  }
+
+  .group-details-button {
+    position: static;
+    text-align: right;
+
+    .btn-primary.btn {
+      background: #3b98ab;
+    }
+  }
+
+  .group-bio {
+    flex-grow: 1;
+    font-size: 16px;
+    font-family: "Merriweather", Georgia, "Times New Roman", Times,serif;
+
+    @media (max-width: 1250px) {
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+  }
+}
+
 table {
 
   tr {
