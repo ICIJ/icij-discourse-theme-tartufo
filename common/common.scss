@@ -18,6 +18,10 @@ html {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: 400;
   background: $secondary;
+
+  body {
+    overflow-x: hidden;
+  }
 }
 
 body input,
