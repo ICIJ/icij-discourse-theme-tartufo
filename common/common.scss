@@ -163,9 +163,17 @@ a, a:visited {
   }
 }
 
-.fps-topic {
-  width: 100%;
+.fps-result {
+  .fps-topic {
+    width: 100%;
+
+    .topic {
+      max-width: 100%;
+    }
+  }
 }
+
+
 
 table {
 
