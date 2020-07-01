@@ -94,6 +94,12 @@ a, a:visited {
   }
 }
 
+.topic-list-item .badge-wrapper .badge-category .category-name {
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .list-controls .combo-box .combo-box-header {
   color: #fff;
   line-height: 1;
