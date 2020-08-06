@@ -356,6 +356,13 @@ table {
 
 .category-navigation > .category-breadcrumb {
 
+  display: flex;
+
+  & > .category-drop:not(.bread-crumbs-projects) {
+    order: 1;
+    float: none;
+  }
+
   .select-kit.is-expanded {
     z-index: 100;
   }

@@ -34,6 +34,10 @@
   background-color: lighten($secondary, 10%);
 }
 
+.latest-topic-list .no-topics {
+  white-space: nowrap;
+}
+
 table.group-members {
   margin-top: 1rem;
 
