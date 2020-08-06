@@ -42,7 +42,7 @@ body textarea {
 a, a:visited {
   color: #000;
 
-  .topic-body .contents &  {
+  .topic-body .contents .cooked &  {
     border-bottom: $tertiary 1px solid;
   }
 }
