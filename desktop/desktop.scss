@@ -17,9 +17,20 @@
   height: auto;
 }
 
-.category-heading .category-logo-show img {
-  max-width: 25%;
-  height: auto;
+.category-heading {
+  display: flex;
+
+  .category-logo-show {
+    margin: 0.25em 1em 1em 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  & > p {
+    margin-top: 0;
+  }
 }
 
 
