@@ -327,6 +327,11 @@ table {
   &.alert-success {
     color: text-contrast($success);
   }
+
+  &.alert-info  {
+    background: $quaternary;
+    color: text-contrast($quaternary);
+  }
 }
 
 .discourse-no-touch .btn-primary:hover,
