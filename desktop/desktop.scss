@@ -1,9 +1,21 @@
+@function text-contrast($n) {
+  $color_brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light_color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+  @if abs($color_brightness) < ($light_color/2){
+    @return white;
+  }
+  @else {
+    @return black;
+  }
+}
+
 @mixin boxShadow {
-  box-shadow: 0 0 0 1px #e3e3e3, 0 1px 0 1px #e3e3e3;
+  box-shadow: 0 0 15px 5px rgba(black, .2);
 }
 
 @mixin buttonShadow {
-  box-shadow: 0 0 0 1px #e3e3e3;
+  box-shadow: 0 0 5px 0 rgba(black, .3);
 }
 
 @mixin buttonTransition {
@@ -11,6 +23,35 @@
     visibility 1s, width 0.2s ease, height 0.5s ease 0.4s, color 0.5s,
     background-color 2s, transform 0.5s;
 }
+
+$panel-bg: darken($header_background, 5%);
+$panel-color: text-contrast($panel-bg);
+$panel-border-color: rgba(text-contrast($panel-bg), .2);
+$panel-border-radius: .3em;
+
+@keyframes topic-body-fade-highlight {
+  0% {
+    background-color: $highlight;
+    color: text-contrast($highlight);
+  }
+  100% {
+    background-color: #fff;
+    color: #333;
+  }
+
+}
+
+@keyframes background-fade-highlight {
+  0% {
+    background-color: $highlight;
+    color: text-contrast($highlight);
+  }
+  100% {
+    background-color: $panel-bg;
+    color: $panel-color;
+  }
+}
+
 
 .category .category-title-link .category-logo img {
   max-width: 100%;
@@ -33,6 +74,16 @@
   }
 }
 
+// scrolling tracker colors
+.timeline-container .topic-timeline .timeline-scrollarea {
+  border-color: text-contrast($secondary);
+}
+
+.timeline-container .topic-timeline .timeline-handle {
+  background-color: text-contrast($secondary);
+}
+
+
 
 //add shadow behind the list of topics on right in Category and Latest View
 //add shadow behind list of categories on left in Category and Latest View
@@ -41,8 +92,15 @@
 .topic-list,
 .latest-topic-list,
 .group-members {
-  @include boxShadow;
-  background-color: lighten($secondary, 10%);
+  background-color: $panel-bg;
+  color: $panel-color;
+  border-radius: $panel-border-radius;
+}
+
+.latest-topic-list .table-heading,
+.category-list thead tr {
+  color: $panel-color;
+  border-bottom: 3px solid $panel-border-color;
 }
 
 .latest-topic-list .no-topics {
@@ -60,9 +118,9 @@ table.group-members {
 //underline navigation links
 .nav-pills > li.active > a,
 .nav-pills > li > a.active {
-  color: $primary;
   font-weight: 600;
   background-color: $secondary;
+  color: text-contrast($secondary);
   border-bottom: 1px solid $tertiary;
 }
 
@@ -71,31 +129,52 @@ table.group-members {
   font-weight: 600;
   text-transform: uppercase;
   padding-bottom: 3px;
+  color: text-contrast($secondary);
+
+  .admin-controls &, .user-main &:not(.active) {
+    color: #333;
+  }
 }
 
 //remove highlighting navigation background on hover
 .nav-pills > li > a:hover {
   background-color: $secondary;
+  color: text-contrast($secondary);
 }
 
 //fix color of user profile navigation icons
 .user-main .nav-pills {
+
   a.active i {
     color: $primary;
   }
+
   a:hover:not(.active) i {
     color: $quaternary;
   }
 }
 
+#topic-title h1 a {
+  color: text-contrast($secondary);
+}
+
 //create conversation cards
 .boxed .topic-body {
   @include boxShadow;
-  background-color: lighten($secondary, 10%);
+  background-color: #fff;
+  color: #333;
   margin-top: 10px;
   border-radius: 2px;
   padding: 12px 20px 0 20px;
   border: 0;
+
+  a {
+    color: #333;
+  }
+
+  &.highlighted {
+      animation: topic-body-fade-highlight 2.5s ease-out;
+  }
 }
 
 //more space for avatars
@@ -186,15 +265,6 @@ table.group-members {
   border-radius: 2px;
 }
 
-@keyframes background-fade-highlight {
-  0% {
-    background-color: lighten($tertiary, 20%);
-  }
-  100% {
-    background-color: lighten($secondary, 10%);
-  }
-}
-
 // clipped user page button shadows
 .user-main .about .controls {
   padding-right: 10px;
@@ -230,6 +300,11 @@ table.group-members {
     padding-right: initial;
     padding-left: 10px;
   }
+}
+
+.d-icon.d-icon-d-tracking,
+.d-icon.d-icon-d-watching {
+  color: #ffb300;
 }
 
 // RTL Overrides

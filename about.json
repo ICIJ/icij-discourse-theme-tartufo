@@ -1,16 +1,16 @@
 {
-  "name": "ICIJ Theme - Marscarpone",
-  "about_url": "https://github.com/ICIJ/icij-discourse-colors/blob/master/README.md",
-  "license_url": "https://github.com/ICIJ/icij-discourse-colors/blob/master/LICENSE.txt",
+  "name": "ICIJ Theme - Tartufo",
+  "about_url": "https://github.com/ICIJ/icij-discourse-theme-tartufo/blob/master/README.md",
+  "license_url": "https://github.com/ICIJ/icij-discourse-theme-tartufo/blob/master/LICENSE.txt",
   "color_schemes": {
-    "ICIJ Light": {
-      "primary": "1E1E1E",
-      "secondary": "fff",
+    "ICIJ Neon": {
+      "primary": "000",
+      "secondary": "212529",
       "tertiary": "852308",
-      "quaternary": "852308",
-      "header_background": "fff",
-      "header_primary": "1E1E1E",
-      "highlight": "eef7f9",
+      "quaternary": "3b98ab",
+      "header_background": "24272c",
+      "header_primary": "fff",
+      "highlight": "fff6de",
       "danger": "d9390d",
       "success": "08856e",
       "love": "850851"
