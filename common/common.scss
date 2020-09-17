@@ -527,7 +527,7 @@ table {
 .user-menu .quick-access-panel li {
   background: $highlight;
 
-  &, a, a .d-icon {    
+  &, a, a .d-icon {
     color: text-contrast($highlight);
   }
 }
@@ -561,6 +561,14 @@ div.menu-links-header .menu-links-row li a.active::after {
   padding: 1rem;
   margin-bottom: 2rem;
   @include boxShadow;
+}
+
+#user-card, #group-card {
+  background: $secondary;
+  
+  &, a, h1 a {
+    color: text-contrast($secondary);
+  }
 }
 
 .category-navigation > .category-breadcrumb {
