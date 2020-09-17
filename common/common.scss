@@ -59,7 +59,9 @@ html {
     textarea,
     .select-kit.combo-box .select-kit-header,
     .select-kit.combo-box .select-kit-body,
-    .select-kit .no-content, .select-kit .is-loading {
+    .select-kit .no-content, .select-kit .is-loading,
+    .d-editor-textarea-wrapper textarea,
+    .d-editor-textarea-wrapper {
       background: #fff;
       color: #333;
     }
@@ -223,7 +225,9 @@ html .d-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #fff;
+  background: transparent;
+  color: text-contrast(lighten($header_background, 5%));
+  padding: 0;
   margin-bottom: 35px * 2;
 
   @media (max-width: 1250px) {
@@ -233,7 +237,7 @@ html .d-header {
   &:after {
     content: "";
     display: block;
-    background: repeating-linear-gradient(-55deg, #eef7f9, #eef7f9 2px, #fff 2px, #fff 4px);
+    background: lighten($header_background, 5%);
     text-align: center;
     z-index: -1;
     position: absolute;
@@ -261,7 +265,6 @@ html .d-header {
   .group-bio {
     flex-grow: 1;
     font-size: 16px;
-    font-family: "Merriweather", Georgia, "Times New Roman", Times,serif;
 
     @media (max-width: 1250px) {
       margin-bottom: 1em;
@@ -287,7 +290,13 @@ html .d-header {
 
 table {
 
-  th, td, &.category-list td, &.category-list th {
+
+  th, &.category-list thead th, &.group-members thead th {
+    font-weight: bold;
+    color: $panel-color;
+  }
+
+  td {
     color: $panel-color;
 
      .category-text-title {
@@ -486,6 +495,7 @@ table {
 }
 
 .user-main,
+.user-table,
 .user-content,
 .admin-content {
   padding: 1em;
@@ -528,6 +538,10 @@ div.menu-links-header .menu-links-row li a.active:hover {
   .d-icon {
     color: inherit;
   }
+}
+
+div.menu-links-header .menu-links-row li a.active::after {
+  border-top-color: #fff;
 }
 
 #main-outlet > br {
