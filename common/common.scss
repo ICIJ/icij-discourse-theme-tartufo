@@ -524,6 +524,14 @@ table {
   background: transparent;
 }
 
+.user-menu .quick-access-panel li {
+  background: $highlight;
+
+  &, a, a .d-icon {    
+    color: text-contrast($highlight);
+  }
+}
+
 .menu-panel li a.widget-link:hover,
 .menu-panel li a.widget-link:focus,
 .menu-panel li a.widget-link:focus:hover,
