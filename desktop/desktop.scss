@@ -259,10 +259,20 @@ table.group-members {
 //cards for search results
 .fps-result {
   @include boxShadow;
-  background-color: lighten($secondary, 10%);
+  background-color: $panel-bg;
+  color: $panel-color;
   margin-top: 10px;
   padding: 20px;
   border-radius: 2px;
+
+  a, a:visited, & .search-link .topic-title {
+    color: $panel-color;
+  }
+
+  .search-highlight {
+    background: $highlight;
+    color: text-contrast($highlight);
+  }
 }
 
 // clipped user page button shadows

@@ -25,12 +25,19 @@
   background-repeat: repeat-x;
 }
 
+@mixin boxShadow {
+  box-shadow: 0 0 15px 5px rgba(black, .2);
+}
+
+@mixin buttonShadow {
+  box-shadow: 0 0 5px 0 rgba(black, .3);
+}
+
 $panel-bg: darken($header_background, 5%);
 $panel-color: text-contrast($panel-bg);
 $panel-border-color: rgba(text-contrast($panel-bg), .1);
 $panel-border-radius: .3em;
 $btn-border-radius: .3em;
-
 
 //use Roboto font
 html {
@@ -57,6 +64,9 @@ html {
     input[type="tel"],
     input[type="color"],
     textarea,
+    div.ac-wrap,
+    div.ac-wrap input[type="text"],
+    .select-kit .select-kit-collection,
     .select-kit.combo-box .select-kit-header,
     .select-kit.combo-box .select-kit-body,
     .select-kit .no-content, .select-kit .is-loading,
@@ -66,14 +76,32 @@ html {
       color: #333;
     }
 
+    .select-kit .select-kit-row.is-selected.is-highlighted {
+      background: $highlight;
+      color: text-contrast($highlight);
+    }
+
     .select-kit .select-kit-row.is-highlighted {
       background: $highlight;
+      color: text-contrast($highlight);
 
       &,
       .badge-wrapper.bullet span.badge-category,
       .badge-wrapper.bullet .d-icon {
-        color: text-contrast($tertiary);
+        color: text-contrast($highlight);
       }
+    }
+
+    div.ac-wrap div.item a.remove, .remove-link {
+      background: $secondary;
+      color: text-contrast($secondary);
+      border: 0;
+      display: inline-block;
+      line-height: 1.5em;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      padding: 0;
     }
   }
 }
@@ -85,12 +113,9 @@ body textarea {
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
-@mixin boxShadow {
-  box-shadow: 0 0 15px 5px rgba(black, .2);
-}
-
-@mixin buttonShadow {
-  box-shadow: 0 0 5px 0 rgba(black, .3);
+.autocomplete ul li a.selected {
+  background: $highlight;
+  color: text-contrast($highlight);
 }
 
 a, a:visited {
@@ -489,7 +514,8 @@ table {
   }
 }
 
-.boxed.white {
+.boxed.white,
+.search-advanced-sidebar {
   background: #fff;
   color: #333;
 }
@@ -565,7 +591,7 @@ div.menu-links-header .menu-links-row li a.active::after {
 
 #user-card, #group-card {
   background: $secondary;
-  
+
   &, a, h1 a {
     color: text-contrast($secondary);
   }
