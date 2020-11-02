@@ -601,6 +601,10 @@ div.menu-links-header .menu-links-row li a.active::after {
 
   display: flex;
 
+  & > .bread-crumbs-projects {
+    display: none;
+  }
+
   & > .category-drop:not(.bread-crumbs-projects) {
     order: 1;
     float: none;
