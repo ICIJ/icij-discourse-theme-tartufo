@@ -175,6 +175,11 @@ html .d-header {
   }
 }
 
+.categories-list .category-logo,
+.category-heading .category-logo-show {
+  max-width: 150px;
+}
+
 .latest-topic-list-item {
   border-color: $panel-border-color;
 }
